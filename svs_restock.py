@@ -27,15 +27,15 @@ def Handler(event=None, context=None):
             item_url = item.a.get('href')
             message_url = svs_url + item_url
             message = client.messages.create(
-                body='Refurbished PB-1000 back in stock\n' + message_url,
-                from_='+TWILIO NUMBER GOES HERE',
-                to='+RECIPENT NUMBER GOES HERE'
+                body = 'Refurbished ' + search + ' back in stock\n' + message_url,
+                from_ = '+TWILIO NUMBER GOES HERE',
+                to = '+RECIPENT NUMBER GOES HERE'
             )
             return 0
         else:
             message = client.messages.create(
-                body='PB-1000 still out of stock',
-                from_='+TWILIO NUMBER GOES HERE',
-                to='+RECIPIENT NUMBER GOES HERE'
+                body = search + ' still out of stock',
+                from_ = '+TWILIO NUMBER GOES HERE',
+                to = '+RECIPIENT NUMBER GOES HERE'
             )
             return 1
